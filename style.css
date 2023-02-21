@@ -68,11 +68,17 @@ main {
   padding-bottom: 3.2rem;
 }
 
-.card {
+.card-bg {
   position: relative;
+  margin-top: 2rem;
 }
 
-.card2 {
+.card-sm {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.hideMobile {
   display: none;
 }
 
@@ -83,7 +89,31 @@ main {
   animation-fill-mode: forwards;
 }
 
-.card span {
+.card-sm span {
+  background-color: var(--bg-span);
+  color: var(--fc-span);
+  text-transform: uppercase;
+
+  width: 112px;
+  height: 35px;
+  border-radius: 20px;
+
+  font-family: var(--ff-heading);
+  font-size: 20px;
+  line-height: 34px;
+
+  position: absolute;
+  top: 1.7rem;
+  left: 19.2rem;
+
+  animation-name: topdown;
+  animation-delay: 200ms;
+  animation-timing-function: ease;
+  animation-duration: 900ms;
+  animation-fill-mode: forwards;
+}
+
+.card-bg span {
   background-color: var(--bg-span);
   color: var(--fc-span);
   text-transform: uppercase;
@@ -167,11 +197,23 @@ footer {
     margin: 3.2rem 5rem;
   }
 
-  .card span {
+  .card-bg {
+    margin-top: 0;
+  }
+
+  .card-sm {
+    margin-top: 0;
+  }
+
+  .card-sm span {
     display: none;
   }
 
-  .card2 {
+  .card-bg span {
+    display: none;
+  }
+
+  .hideMobile {
     display: block;
   }
 
@@ -182,7 +224,7 @@ footer {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 
     gap: 3.2rem;
   }
@@ -220,7 +262,13 @@ footer {
     font-weight: 400;
   }
 
-  footer span {
+  footer a {
     font-weight: 700;
+    text-decoration: none;
+    color: var(--fc-span);
+  }
+
+  footer a:hover {
+    filter: opacity(0.8);
   }
 }
